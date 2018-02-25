@@ -1,0 +1,29 @@
+name: DruMob
+type: theme
+description: DruMob A Bootstrap sub-theme, Will make your Drupal site fits as a mobile application.
+package: drumob
+# core: 8.x
+libraries:
+  - drumob/main
+  - drumob/fontawesome
+base theme: bootstrap
+
+regions:
+  user_info_block: User information on menu
+  mobile_visible_menu: On main menu. Visible on mobile and tablet only
+  desktop_visible_menu: On main menu. Visible on desktop only
+  navigation: Navigation. Visible on all screen sizes
+  header: Top Bar
+  help: Help
+  content: Content
+  sidebar_first: Primary
+  sidebar_second: Secondary
+  footer: Footer
+  page_top: Page top
+  page_bottom: Page bottom
+
+# Information added by Drupal.org packaging script on 2016-10-22
+version: '8.x-1.0'
+core: '8.x'
+project: 'drumob'
+datestamp: 1477150441

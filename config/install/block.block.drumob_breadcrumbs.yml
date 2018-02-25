@@ -1,0 +1,22 @@
+uuid: dff367e2-63f1-4e33-9f28-355922e2057e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drumob
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: drumob_breadcrumbs
+theme: drumob
+region: content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

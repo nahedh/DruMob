@@ -1,0 +1,22 @@
+uuid: 8b62dc30-23b6-4675-9cbb-0690dc326e8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drumob
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: drumob_content
+theme: drumob
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

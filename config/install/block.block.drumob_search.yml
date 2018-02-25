@@ -1,0 +1,22 @@
+uuid: 573e8e96-8541-4f29-89fc-99e17982688d
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - drumob
+_core:
+  default_config_hash: Re3Hfa3wPB3Z8O2RySo6u_VW2L4Papqy8NlVLbZk7S8
+id: drumob_search
+theme: drumob
+region: navigation
+weight: -2
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

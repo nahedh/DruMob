@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the drumob theme.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+
+/**
+ * Gets current theme settings array.
+ */
+function drumob_variables(&$variables) {
+  // Add cachability metadata.
+  $theme_settings = \Drupal::config('drumob.settings');
+  CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheableDependency($theme_settings)
+    ->applyTo($variables);
+
+  return $theme_settings->getOriginal();
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function drumob_preprocess_html(array &$variables) {
+  if (\Drupal::moduleHandler()->moduleExists('color')) {
+  }
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function drumob_preprocess_page(array &$variables) {
+  // Get all theme variables in on array.
+  $drumob_variables = drumob_variables($variables);
+  $variables['logo'] = $drumob_variables['logo'];
+  // Adds the set in the theme variable tooöbar buttons
+  // to the page render variables
+  // Header left and right:
+  $variables['back_link_title'] = $drumob_variables['back_link_title'];
+  $variables['back_link_icon'] = $drumob_variables['back_link_icon'];
+
+  $variables['region_wells'] = $drumob_variables['region_wells'];
+  // Footer 1-5:
+  $variables['footer_buttons'] = [];
+  for ($i = 1; $i <= 5; $i++) {
+    $button_attr_arr = [];
+    foreach (['icon', 'title', 'href'] as $attr) {
+      $link_key = 'link_' . $attr . '_' . $i;
+
+      if (isset($drumob_variables[$link_key]) && $drumob_variables[$link_key]) {
+        if ($attr == 'href') {
+          $button_attr_arr[$attr] = drumob_footer_buttons_href_process($drumob_variables[$link_key], $variables['base_path']);
+        }
+        else {
+          $button_attr_arr[$attr] = $drumob_variables[$link_key];
+        }
+      }
+    }
+    if (count($button_attr_arr) == 3) {
+      $variables['footer_buttons'][$i] = $button_attr_arr;
+    }
+  }
+  $variables['show_node_heading'] = $drumob_variables['show_node_heading'];
+  $variables['drumob_theme_path'] = drupal_get_path('theme', 'drumob');
+  // Add the loading animation to the css inline.
+  // So that it can be passed from the settings.
+  $variables['show_loading_animation'] = $drumob_variables['show_loading_animation'];
+  $variables['selected_animation_icon'] = $drumob_variables['animation_icon'] ? $drumob_variables['animation_icon'] : 'loading1';
+
+  // Add the navmenu font size to the css inline.
+  // So that it can be passed from the settings.
+  $variables['navmenu_font_size_css'] = $drumob_variables['navmenu_font_size'] ? $drumob_variables['navmenu_font_size'] : 0;
+
+  if ($drumob_variables['show_footer_on_mobile_only']) {
+    $variables['footer_mobile_visibility'] = 'visible-xs visible-sm';
+  }
+}
+
+/**
+ * Process footer buttons href.
+ */
+function drumob_footer_buttons_href_process($href, $base_path) {
+  if (strstr($href, 'http://') || strstr($href, 'https://')) {
+    return $href;
+  }
+  elseif ($href == '<front>') {
+    return \Drupal\Core\Url::fromRoute('<front>')->toString();
+  }
+  else {
+    return $base_path . $href;
+  }
+}

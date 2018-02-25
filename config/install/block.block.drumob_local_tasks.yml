@@ -1,0 +1,22 @@
+uuid: 17ff1069-1861-4bfe-82ce-ce0c2d51cd25
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drumob
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: drumob_local_tasks
+theme: drumob
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 6e523a4a-7047-48de-bb5f-2c4ac9c38e97
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - drumob
+_core:
+  default_config_hash: F1POB-LH2QuVaLYFycLNwyyFVT31jWFtz4lDA7S2dDE
+id: userlogin
+theme: drumob
+region: navigation
+weight: -1
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

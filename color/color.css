@@ -1,0 +1,76 @@
+/*Site background and text colors */
+body {
+  color: #333333;
+  background-color: #fff;
+}
+
+/* Top navbar colors */
+#header-navbar {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+#main-menu-offcanvas {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+/* Top navbar header color */
+#header-navbar .navbar-brand {
+  color: #777;
+}
+/* Top navbar button colors */
+#header-navbar .btn-default {
+  background-color: #f4f4f4;
+  border-color: #ccc;
+}
+
+#header-navbar .navbar-toggle {
+  background-color: #f4f4f4;
+  border-color: #ccc;
+}
+
+#header-navbar .btn-default {
+  color: #343434;
+}
+
+#header-navbar .navbar-toggle i {
+  color: #343434;
+}
+
+#header-navbar .navbar-toggle .icon-bar {
+  background-color: #343434;
+}
+
+#main-menu-offcanvas {
+  color: #363636;
+  background-color: #f5f5f5;
+}
+
+.region-navigation a {
+  color: #363636;
+  background-color: #f5f5f5;
+}
+
+.region-navigation a {
+  clear: right;
+}
+
+/* Bottom navbar colors */
+#footer-navbar {
+  background-color: #f9f9f9;
+  border-color: #e8e8e8;
+}
+/* Bottom navbar button colors */
+#footer-navbar .btn-default {
+  color: #353535;
+  background-color: #f2f2f2;
+  border-color: #c2c2c2;
+}
+
+/* Bottom navbar active button colors */
+#footer-navbar .btn-default.active {
+  color: #373737;
+  background-color: #f3f3f3;
+  border-color: #c3c3c3;
+}

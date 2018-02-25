@@ -1,0 +1,46 @@
+components:
+  navbar: ''
+theme_settings:
+  show_node_heading: ''
+  show_loading_animation: ''
+toolbar_settings:
+  show_footer_on_mobile_only: ''
+  header_links:
+    back_link_title: 'Back'
+    back_link_icon: 'fa-arrow-left fa-lg'
+link_title_1: ''
+link_href_1: ''
+link_icon_1: ''
+link_title_2: ''
+link_href_2: ''
+link_icon_2: ''    
+link_title_3: ''
+link_href_3: ''
+link_icon_3: ''
+link_title_4: ''
+link_href_4: ''
+link_icon_4: ''
+link_title_5: ''
+link_href_5: ''
+link_icon_5: ''
+navmenu_settings:
+  navmenu_font_size: '12px'
+loading_animation_settings:
+  animation_icon: ''  
+toolbar_settings:
+  layouts_enable: 1
+  suggestions:
+    page: page
+features:
+  logo: 1
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: ''
+favicon:
+  use_default: 1
+  path: ''
+tooltip_placement: 'auto bottom'
